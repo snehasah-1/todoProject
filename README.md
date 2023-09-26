@@ -45,7 +45,7 @@ This command will start a development server, and you can begin building your Re
 <h3>Technologies Used</h3>
 <li>React</li>
 <li>Vite</li>
-<i>Redux</i>
+<li>Redux</li>
 
 <h3>Acknowledgments</h3>
 Thanks to the Vite and React communities for their awesome tools and resources.
