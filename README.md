@@ -9,7 +9,8 @@ To get started, you'll need to install Vite globally using npm:
     <i>npm install -g vite</i>
 
 <h4>Step 2: Create a New Vite Project</h4>
-Once Vite is installed, you can create a new Vite project for your todo app. Run the following command and follow the prompts:
+Once Vite is installed, you can create a new Vite project for your todo app. 
+Run the following command and follow the prompts:
     <i>npm init vite</i>
 
 During project initialization, you'll be asked to provide a project name and a package name. For example:
