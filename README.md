@@ -50,5 +50,5 @@ This command will start a development server, and you can begin building your Re
 <h3>Acknowledgments</h3>
 Thanks to the Vite and React communities for their awesome tools and resources.
 
+![Capture](https://github.com/snehasah-1/todoProject/assets/144802745/630a2957-25d7-46ab-976e-82a81cec12be)
 
-![Capture](https://github.com/snehasah-1/todoProject/assets/144802745/ab04e2f9-8e4a-4a10-9b85-e8ba4a0f88b6)
