@@ -6,19 +6,20 @@ This is a simple todo application built using React and Vite and Redux
 
 <h4>Step 1: Install Vite</h4>
 To get started, you'll need to install Vite globally using npm:
-    <i>npm install -g vite</i>
+
+    npm install -g vite
 
 <h4>Step 2: Create a New Vite Project</h4>
-Once Vite is installed, you can create a new Vite project for your todo app. 
-Run the following command and follow the prompts:
-    <i>npm init vite</i>
+Once Vite is installed, you can create a new Vite project for your todo app. Run the following command and follow the prompts:
 
-During project initialization, you'll be asked to provide a project name and a package name. For example:
+    npm init vite
+
+<p>During project initialization, you'll be asked to provide a project name and a package name. For example:<p>
 
 <li>Project Name: todo-app</li>
 <li>Package Name: todo-app</li>
 
-You'll also need to select React as the framework and choose the variant that suits your preference:
+<p>You'll also need to select React as the framework and choose the variant that suits your preference:</p>
 
 <li>Javascript</li>
 <li>Typescript</li>
@@ -27,13 +28,16 @@ You'll also need to select React as the framework and choose the variant that su
 
 <h4>Step 3: Run Your Project</h4>
 After your project is created, navigate to the project directory:
-    <i>cd todo-app</i>
+
+    cd todo-app
 
 Install the project dependencies:
-    <i>npm install</i>
+
+    npm install
 
 Start the development server:
-    <i>npm run dev</i>
+
+    npm run dev
 
 This command will start a development server, and you can begin building your React todo application right away.
 
