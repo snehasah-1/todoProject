@@ -1,41 +1,48 @@
-import React from "react";
-import { ListGroup, ListGroupItem,Row,Col } from "reactstrap";
+import { ListGroup, ListGroupItem, Row, Col } from "reactstrap";
 import {connect} from "react-redux";
-import { markComplete } from "../action/todo";
-import { toast } from "react-toastify";
-import { FaCheckCircle, FaTrash,FaRegSquare,FaPen } from "react-icons/fa";
+import { toast } from "react-toastify"; 
+import { markComplete, removeTodo } from "../action/todo";
+import { SquareIcon, CheckCircleIcon, TrashIcon, PenIcon } from '../icons/IconsModule';
 
-const Todo = ({ todoReducer, markComplete }) => {
+const Todo = ({ todoReducer, markComplete, removeTodo, handleEditClick, editFormVisibility }) => {
+  localStorage.setItem("todos", JSON.stringify(todoReducer));
   return (
     <Row>
       <Col md={4} className="offset-sm-4">
         <ListGroup>
-        {todoReducer.map((todo) => (
-          <ListGroupItem key={todo.id}>
-            <span style={{float:"left"}}>
-              {!todo.todoStatus?(
-                <FaRegSquare
-                className="text-primary"
-                onClick={() => markComplete(todo.id
-                  ,true)}
-              />
-              ):(
-                <FaCheckCircle
-                className="text-success"
-                onClick={() => markComplete(todo.id
-                  ,false)}
-              />
+          {todoReducer.map((todo) => (
+            <ListGroupItem key={todo.id}>
+              <span style={{ float: "left" }}>
+                {!todo.todoStatus ? (
+                  editFormVisibility === false && (
+                  <SquareIcon
+                    onClick={() => markComplete(todo.id, true)}
+                  />
+                  )
+                ) : (
+                  <CheckCircleIcon
+                    onClick={() => markComplete(todo.id, false)}
+                  />
+                )}
+              </span>
+            
+              <span style={todo.todoStatus?{textDecoration:"line-through", float: "left", marginLeft: "20px" }:{ float: "left", marginLeft: "20px" }}>
+                {todo.title}
+              </span>
+            
+              {editFormVisibility === false && (
+                <>
+                  <span style={{ float: "right", marginLeft: "20px" }}>
+                    <TrashIcon
+                      onClick={() => removeTodo(todo.id)}
+                    />
+                  </span>
+                
+                  <span style={{ float: "right", marginLeft: "10px" }}>
+                    <PenIcon onClick={() => handleEditClick(todo,true)} />
+                  </span>
+                </>
               )}
-            </span>
-            <span style={{float:"left", marginLeft:"20px"}}>
-              {todo.title}
-            </span>
-            <span style={{float:"right", marginLeft:"20px"}}>
-              <FaTrash className="text-danger"/>
-            </span>
-            <span style={{float:"right", marginLeft:"10px"}}>
-              <FaPen className="text-primary" />
-            </span>
           </ListGroupItem>
         ))}
       </ListGroup>
@@ -51,5 +58,11 @@ const mapDispatchToProps = (dispatch) => ({
   markComplete: (id,todoStatus) => {
     dispatch(markComplete(id,todoStatus));
   },
+  removeTodo: (id) => {
+    dispatch(removeTodo(id));
+  },
+  editTodo: (todoId,todoEdit) => {
+    dispatch(editTodo(todoId,todoEdit));
+  }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Todo);
