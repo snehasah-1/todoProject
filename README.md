@@ -2,5 +2,4 @@
 
 Using Redux and vite
 
-
-![Capture](https://github.com/snehasah-1/todoProject/assets/144802745/ab04e2f9-8e4a-4a10-9b85-e8ba4a0f88b6)
+![Capture](https://github.com/snehasah-1/todoProject/assets/144802745/065021f2-a65e-44a0-ad92-3a400f86a891)
