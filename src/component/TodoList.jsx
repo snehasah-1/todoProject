@@ -13,17 +13,18 @@ const Todo = ({ todoReducer, markComplete, removeTodo, handleEditClick, editForm
           {todoReducer.map((todo) => (
             <ListGroupItem key={todo.id}>
               <span style={{ float: "left" }}>
-                {!todo.todoStatus ? (
-                  editFormVisibility === false && (
-                  <SquareIcon
-                    onClick={() => markComplete(todo.id, true)}
-                  />
-                  )
-                ) : (
-                  <CheckCircleIcon
-                    onClick={() => markComplete(todo.id, false)}
-                  />
-                )}
+                { editFormVisibility === false && (
+                  !todo.todoStatus ? (
+                    editFormVisibility === false && (
+                    <SquareIcon
+                      onClick={() => markComplete(todo.id, true)}
+                    />
+                    )
+                  ) : (
+                    <CheckCircleIcon
+                      onClick={() => markComplete(todo.id, false)}
+                    />
+                  ))}
               </span>
             
               <span style={todo.todoStatus?{textDecoration:"line-through", float: "left", marginLeft: "20px" }:{ float: "left", marginLeft: "20px" }}>
